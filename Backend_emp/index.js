@@ -35,7 +35,11 @@ import argon2 from "argon2";
 
 const app=express();
 app.use(express.json())
-app.use(cors());
+// const frontendURL = 'http://localhost:8080'
+// app.use(cors(frontendURL));
+app.use(cors({
+    origin: ['http://localhost:8080', 'https://employee-records-beta.vercel.app']
+  }));
 app.use("/auth",authrouter)
 app.use("/emp",empRouter)
 
