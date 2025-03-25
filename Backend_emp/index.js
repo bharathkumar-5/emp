@@ -38,7 +38,7 @@ app.use(express.json())
 // const frontendURL = 'http://localhost:8080'
 // app.use(cors(frontendURL));
 app.use(cors({
-    origin: ['http://localhost:8080', 'https://employee-records-beta.vercel.app']
+    origin: "*"
   }));
 app.use("/auth",authrouter)
 app.use("/emp",empRouter)
